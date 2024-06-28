@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Отзовик{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'films/css/main.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <aside class="sidebar">
+        <img src="{% static 'films/img/img1.jpg' %}" alt="logo" class="img-fluid">
+        <span>Фильмы</span>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a href="{% url 'reviews_home' %}" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="{% url 'new_review' %}" class="nav-link">Добавить отзыв</a></li>
+        </ul>
+    </aside>
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

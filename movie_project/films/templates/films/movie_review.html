@@ -1,0 +1,28 @@
+{% extends 'films/layout.html' %}
+
+{% block title %}
+<title>Фильмы</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Отзывы</h1>
+    <div class="row justify-content-center">
+        {% if review %}
+            {% for review in reviews %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ review.title }}</h5>
+                            <p class="card-text">{{ review.text }}</p>
+                            <small class="text-muted">{{ review.pub_date }}</small>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-center">Отзывов нет</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
